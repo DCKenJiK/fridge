@@ -1,0 +1,17 @@
+[project]
+name = "fridge"
+version = "0.1.0"
+description = "Freezer and fridge inventory tracker with dinner brainstorming"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "fastapi>=0.109",
+    "uvicorn>=0.27",
+]
+
+[project.scripts]
+fridge = "fridge.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧊 Fridge Inventory</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>🧊 Fridge Inventory</h2>
+        <div class="storage-toggle">
+            <button class="active" data-storage="freezer">❄️ Freezer</button>
+            <button data-storage="fridge">🧊 Fridge</button>
+        </div>
+        <div class="filter-section">
+            <h3>Category</h3>
+            <button class="filter-btn active" data-category="">All</button>
+            <button class="filter-btn" data-category="beef">🥩 Beef</button>
+            <button class="filter-btn" data-category="fish">🐟 Fish</button>
+            <button class="filter-btn" data-category="chicken">🐔 Chicken</button>
+            <button class="filter-btn" data-category="pork">🐖 Pork</button>
+            <button class="filter-btn" data-category="vegetarian">🥬 Vegetarian</button>
+            <button class="filter-btn" data-category="breakfast">🍳 Breakfast</button>
+            <button class="filter-btn" data-category="dessert">🍰 Dessert</button>
+            <button class="filter-btn" data-category="sauce">🫙 Sauce</button>
+            <button class="filter-btn" data-category="pesto">🌿 Pesto</button>
+            <button class="filter-btn" data-category="tomato_sauce">🍅 Tomato Sauce</button>
+        </div>
+        <div class="history-toggle">
+            <button id="historyToggle">📋 Weekly History</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="top-bar">
+            <input class="search-input" type="text" placeholder="Search items..." id="searchInput">
+            <button class="add-btn" id="addBtn">+ Add Item</button>
+        </div>
+        <div class="content">
+            <div class="item-grid" id="itemGrid"></div>
+            <div class="empty" id="emptyState" style="display:none;">
+                <p>No items found. Try adding something!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="history-panel" id="historyPanel">
+        <div class="history-panel-inner">
+            <h3>📋 This Week's Dinners</h3>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="addModal">
+        <div class="modal">
+            <h2>Add New Item</h2>
+            <label for="itemName">Name</label>
+            <input type="text" id="itemName" placeholder="e.g. Beef Stroganoff">
+
+            <label for="itemCategory">Category</label>
+            <select id="itemCategory">
+                <option value="beef">🥩 Beef</option>
+                <option value="fish">🐟 Fish</option>
+                <option value="chicken">🐔 Chicken</option>
+                <option value="pork">🐖 Pork</option>
+                <option value="vegetarian">🥬 Vegetarian</option>
+                <option value="breakfast">🍳 Breakfast</option>
+                <option value="dessert">🍰 Dessert</option>
+                <option value="sauce">🫙 Sauce</option>
+                <option value="pesto">🌿 Pesto</option>
+                <option value="tomato_sauce">🍅 Tomato Sauce</option>
+                <option value="other">📦 Other</option>
+            </select>
+
+            <label for="itemStorage">Storage</label>
+            <select id="itemStorage">
+                <option value="freezer">❄️ Freezer</option>
+                <option value="fridge">🧊 Fridge</option>
+            </select>
+
+            <label for="itemNotes">Notes (optional)</label>
+            <input type="text" id="itemNotes" placeholder="e.g. Serves 4, makes 3 portions">
+
+            <div class="modal-actions">
+                <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                <button class="submit-btn" id="submitBtn">Add Item</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
